@@ -16,7 +16,7 @@ export const pureAddUser = (name: string, setError: (value:string)=>void, setNam
         addUserCallback(name)
         setName(' ')
     }
-    // иначе - добавить юзера при помощи addUserCallback и очистить инпут засетав ''
+    // иначе - добавить ;юзера при помощи addUserCallback и очистить инпут засетав ''
     // проверить на пустоту можно при помощи метода trim(). К примеру: name.trim() !== ''
     // ЕСЛИ НЕ БУДЕТ ПОЛУЧАТЬСЯ, НЕ РАССТРАИВАЙСЯ. НА ЧЕТВЕРТОМ ЗАНЯТИИ ПО ТУДУЛИСТУ НАУЧИМ), НО ВСЕ ТАКИ ПОПЫТАЙСЯ))
 }

@@ -3,6 +3,7 @@ import Greeting from './Greeting'
 import { UserType } from './HW3'
 import user from "../hw08/User";
 
+
 type GreetingContainerPropsType = {
     users: Array<UserType> // need to fix any
     addUserCallback: (name:string)=>void// need to fix any
@@ -10,11 +11,11 @@ type GreetingContainerPropsType = {
 
 export const pureAddUser = (name: string, setError: (value:string)=>void, setName: (value:string)=>void, addUserCallback: (name:string)=>void) => {
     // если имя пустое - показать ошибку: setError('Ошибка! Введите имя!'),
-    if(name.trim() !== ' '){
+    if(name.trim() == ''){
         return setError('Ошибка! Введите имя!')
     } else {
         addUserCallback(name)
-        setName(' ')
+        setName('')
     }
     // иначе - добавить ;юзера при помощи addUserCallback и очистить инпут засетав ''
     // проверить на пустоту можно при помощи метода trim(). К примеру: name.trim() !== ''
@@ -22,7 +23,7 @@ export const pureAddUser = (name: string, setError: (value:string)=>void, setNam
 }
 
 export const pureOnBlur = (name: string, setError: (value:string)=>void) => { // если имя пустое - показать ошибку
-    if(name.trim() !== ' '){
+    if(name.trim() == ''){
         return setError('Ошибка! Введите имя!')
     }
 }
@@ -49,7 +50,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
         const trimmedName = e.currentTarget.value.trim()
         if (trimmedName){
             setName(trimmedName)
-            error && setError(' ')
+            error && setError('')
         }else{
             setName('')
             setError('name is require')
@@ -75,7 +76,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
     }
 
     const totalUsers = users.length // need to fix
-    const lastUserName = 'some name' // need to fix
+    const lastUserName = '  j' // need to fix
 
     return (
         <Greeting
